@@ -4,7 +4,11 @@ import jsonToVal from "./jsonToVal";
  * @param {string} key
  */
 function getLocal (key) {
-  return jsonToVal(window.localStorage.getItem(key));
+  try {
+    return jsonToVal(window.localStorage.getItem(key));
+  } catch (error) {
+    throw error(`getLocal函数报错了 -- error`)
+  }
 }
 
 export default getLocal;

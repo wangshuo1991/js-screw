@@ -4,7 +4,11 @@ import jsonToVal from "./jsonToVal";
  * @param {string} key
  */
 function getSession (key) {
-  return jsonToVal(window.sessionStorage.getItem(key));
+  try {
+    return jsonToVal(window.sessionStorage.getItem(key));
+  } catch (error) {
+    throw error(`getLocal函数报错了 -- error`)
+  }
 }
 
 export default getSession;

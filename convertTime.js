@@ -2,10 +2,10 @@
 import showDataType from './showDataType'
 /**
  *时间戳转换为指定的时间格式
- * @param {*} time
+ * @param {*} secs
  * @param {*} format
  */
-function convertTime (time, format='y-m-d') {
+function convertTime (secs, format='y-m-d') {
   if (showDataType(secs) != 'Number') {
     throw Error(`convertTime函数接收的参数 - ${secs} - 应该是数字或者是字符数字`);
   } else {
@@ -26,6 +26,15 @@ function convertTime (time, format='y-m-d') {
     return final[analyseFormat(format)];
   }
 
+}
+
+/**
+ * 不满足两位数字的补0
+ * @param {number} num
+ * @return {number} 
+ */
+function addZero (num) {
+  return num >= 10 ? num : (`0${num}`);
 }
 
 /**
