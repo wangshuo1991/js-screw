@@ -1,3 +1,5 @@
+
+import showDataType from './showDataType'
 /**
  *时间戳转换为指定的时间格式
  * @param {*} time

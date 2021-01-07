@@ -1,0 +1,22 @@
+{
+  "name": "js-screw",
+  "version": "1.0.0",
+  "description": "js tools function",
+  "main": "index.js",
+  "scripts": {
+    "test": "test screw"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangshuo1991/js-screw.git"
+  },
+  "keywords": [
+    "js-screw"
+  ],
+  "author": "will-wang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wangshuo1991/js-screw/issues"
+  },
+  "homepage": "https://github.com/wangshuo1991/js-screw#readme"
+}
