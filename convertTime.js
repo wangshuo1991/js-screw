@@ -21,7 +21,8 @@ function convertTime (secs, format='y-m-d') {
       `${year}-${month}-${day} ${hour}:${min}`,
       `${month}-${day}`,
       `${year}年${month}月${day}日 ${hour}:${min}`,
-      `${month}月${day}日`
+      `${month}月${day}日`,
+      `${hour}:${min}:${sec}`,
     ];
     return final[analyseFormat(format)];
   }
@@ -52,7 +53,8 @@ function analyseFormat (format) {
     'y-m-d-h-m': 1,
     'm-d': 2,
     'ymdhm': 3,
-    'md': 4
+    'md': 4,
+    'hms': 5
   };
   return formats[format];
 }
