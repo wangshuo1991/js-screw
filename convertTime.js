@@ -16,6 +16,7 @@ function convertTime (secs, format='y-m-d') {
     var hour = addZero(time.getHours());
     var min = addZero(time.getMinutes());
     var sec = addZero(time.getSeconds());
+
     var final = [
       `${year}-${month}-${day}`,
       `${year}-${month}-${day} ${hour}:${min}`,
@@ -23,10 +24,26 @@ function convertTime (secs, format='y-m-d') {
       `${year}年${month}月${day}日 ${hour}:${min}`,
       `${month}月${day}日`,
       `${hour}:${min}:${sec}`,
+      `${convertToHMS(secs)}`
     ];
     return final[analyseFormat(format)];
   }
 
+}
+
+/**
+ *毫秒数转成时分秒
+ * @param {*} secs
+ */
+function convertToHMS (secs) {
+  if (showDataType(secs) != 'Number') {
+    throw Error(`convertTime函数接收的参数 - ${secs} - 应该是数字或者是字符数字`);
+  } else {
+    var hour = addZeroparseInt(((secs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+    var min = addZeroparseInt(((secs % (1000 * 60 * 60)) / (1000 * 60)));
+    var sec = addZero((secs % (1000 * 60)) / 1000);
+    return `${hour}:${min}:${sec}`
+  }
 }
 
 /**
@@ -54,7 +71,8 @@ function analyseFormat (format) {
     'm-d': 2,
     'ymdhm': 3,
     'md': 4,
-    'hms': 5
+    'hms': 5,
+    'HMS': 6
   };
   return formats[format];
 }
