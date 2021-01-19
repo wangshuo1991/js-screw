@@ -10,6 +10,7 @@ import saveLocal from './saveLocal'
 import saveSession from './saveSession'
 import showDataType from './showDataType'
 import valToJson from './valToJson'
+import convertSize from './convertSize'
 
 export {
   checkString,
@@ -23,5 +24,6 @@ export {
   saveLocal,
   saveSession,
   showDataType,
-  valToJson
+  valToJson,
+  convertSize
 }
