@@ -7,7 +7,8 @@ import showDataType from './showDataType'
  */
 function convertTime (secs, format='y-m-d') {
   if (showDataType(secs) != 'Number') {
-    throw Error(`convertTime函数接收的参数 - ${secs} - 应该是数字或者是字符数字`);
+    console.log(`convertTime函数接收的参数 - ${secs} - 应该是数字或者是字符数字`);
+    return '--'
   } else {
     var time = new Date(secs);
     var year = addZero(time.getFullYear());
