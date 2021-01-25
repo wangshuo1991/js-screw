@@ -20,6 +20,8 @@
 ```
 
 **3、组件中使用（template use）**
+
+- `convertTime` 时间戳转化为常用的时间格式
 ```
   ...
 
@@ -38,6 +40,39 @@
   }
 
   ...
+```
+
+- `convertEmpty` 数据为空（null, undefined）的时候自动转化为 '--'
+```
+  {{this.$tool.convertEmpty(data.name)}}
+```
+
+- `convertString` 校验字符串（格式是否符合ip，服务器地址，是否为电话，邮箱等）
+```
+ // 举个例子，校验是否为ip地址
+ if (this.$tool.checkString(str).isIp) {
+   // if true, some code here
+ } else {
+
+ }
+```
+
+- `getSession` 本地缓存操作(对应还有localstorage的存取)
+```
+ let user = this.$tool.getSession('user');
+```
+
+- `showDataType` 获取数据类型
+```
+ // 判断是否为对象
+ if (this.$tool.showDataType(data) == 'Object') {
+
+ }
+```
+
+- `convertSize` 转换文件大小（b -> kb,mb,gb）
+```
+ this.$tool.convertSize(1024); // -> 1kb
 ```
 
 - Github
