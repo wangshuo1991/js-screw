@@ -17,7 +17,8 @@ function checkString (target) {
     isIp: isIp(res),
     isServer: isServer(res),
     isCellNumber: isCellNumber(res),
-    isStrongPwd: isStrongPwd(res)
+    isStrongPwd: isStrongPwd(res),
+    isChinese: isChinese(res)
   }
 }
 
@@ -55,6 +56,15 @@ function isCellNumber (str) {
  */
 function isStrongPwd (str) {
   return /(?=.{6,12})(?=.*[a-z])(?=.*[A-Z])(?=.*\d).*/.test(str);
+}
+
+/**
+ * 校验是否含有中文
+ * @param {string} str
+ * @return {boolean} 
+ */
+function isChinese (str) {
+  return /[\u4100-\u9fa5]/.test(str);
 }
 
 export default checkString;
