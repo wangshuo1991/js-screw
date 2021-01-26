@@ -14,12 +14,13 @@ function toTimestamp (time) {
   } else if (regMinSec.test(time)) {
     // '10:10:10' 或者 '10:10'
     let groups = time.match(regMinSec);
-    console.log('groups', groups);
+    let yearSecs = new Date('2020-01-01').getTime();
+    console.log('yearSecs', yearSecs);
     let hour = +(!(checkEmpty(groups[1])) ? groups[1] : 0);
     let mins = +(!(checkEmpty(groups[2])) ? groups[2] : 0);
     let secs = +(!(checkEmpty(groups[3])) ? groups[3] : 0);
     console.log('hour', hour);
-    result = (hour * 3600 + mins * 60 + secs * 1)*1000;
+    result = yearSecs + (hour * 3600 + mins * 60 + secs * 1)*1000 - 28800000;
   }
   return result;
 }
