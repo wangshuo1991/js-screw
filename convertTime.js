@@ -34,7 +34,7 @@ function convertTime (secs, format='y-m-d') {
 }
 
 /**
- *毫秒数转成时分秒
+ * 毫秒数转成时分秒
  * @param {*} secs
  */
 function convertToHMS (secs) {

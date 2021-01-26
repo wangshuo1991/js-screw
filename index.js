@@ -11,6 +11,7 @@ import saveSession from './saveSession'
 import showDataType from './showDataType'
 import valToJson from './valToJson'
 import convertSize from './convertSize'
+import toTimestamp from './toTimestamp'
 
 export {
   checkString,
@@ -25,5 +26,6 @@ export {
   saveSession,
   showDataType,
   valToJson,
-  convertSize
+  convertSize,
+  toTimestamp
 }
