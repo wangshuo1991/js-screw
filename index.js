@@ -12,6 +12,8 @@ import showDataType from './showDataType'
 import valToJson from './valToJson'
 import convertSize from './convertSize'
 import toTimestamp from './toTimestamp'
+import difference from './difference'
+import same from './same'
 
 export {
   checkString,
@@ -27,5 +29,7 @@ export {
   showDataType,
   valToJson,
   convertSize,
-  toTimestamp
+  toTimestamp,
+  difference,
+  same
 }

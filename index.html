@@ -42,9 +42,14 @@
       return result;
     }
 
+
+    function same(arr1, arr2) {
+      return arr1.filter(item => new Set(arr2).has(item))
+    }
     console.log('2020-10-20', toTimestamp('2020-10-20'));
     console.log('24:20', toTimestamp('24:20'));
     console.log('11:28:20', toTimestamp('11:28:20'));
+    console.log(same([1,2,3], [1,2]))
   </script>
 </body>
 </html>
